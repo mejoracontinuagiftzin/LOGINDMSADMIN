@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to GiftTrack</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000, #0078C8);
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 360px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            text-align: center;
+            border: 2px solid #0078C8;
+        }
+
+        .container img {
+            width: 120px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-size: 20px; /* ajustado a un tamaño más pequeño */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #0078C8;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-bottom-color: #005f9e;
+        }
+
+        .input-box label {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: #fff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus + label, .input-box input:not(:placeholder-shown) + label {
+            top: -15px;
+            font-size: 14px;
+            color: #005f9e;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0078C8;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #005f9e;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo">
+        <h1>Bienvenido a DMS-Mejora Continua</h1>
+        <h2>Un sistema para el control de documentos</h2>
+        <div class="input-box">
+            <input type="text" id="username" placeholder=" " required>
+            <label for="username">Usuario</label>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder=" " required>
+            <label for="password">Contraseña</label>
+        </div>
+        <button class="btn" onclick="login()">Entrar</button>
+        <div id="error" class="error"></div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+
+            if (username === 'mejoracontinua@giftzin.com' && password === '282000') {
+                window.location.href = 'https://docs.google.com/spreadsheets/d/1aFJTTeLP-CYhdZgP16VurZLJCBb31xIhCtMsqy0MrA0/edit?usp=sharing';
+            } else {
+                errorDiv.textContent = 'Usuario o contraseña incorrectos.';
+            }
+        }
+    </script>
+</body>
+</html>
+
